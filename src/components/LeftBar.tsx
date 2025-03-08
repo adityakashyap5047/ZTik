@@ -90,9 +90,18 @@ function LeftBar() {
           Post
         </Link>
       </div>
-      <div className="">
+      <div className="flex items-center justify-between">
         {/* User */}
-        user
+        <div className="flex items-center gap-2">
+          <div className="w-10 h-10 relative rounded-full overflow-hidden">
+            <Image src="/general/avatar.png" alt="user image" fill/>
+          </div>
+          <div className="hidden xxl:flex flex-col">
+            <span className="font-bold">aditya kumar</span>
+            <span className="text-sm text-textGray">@aditya</span>
+          </div>
+        </div>
+        <div className="hidden xxl:block cursor-pointer font-bold">...</div>
       </div>
     </div>
   )
