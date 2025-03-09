@@ -9,11 +9,21 @@ type ImageType = {
     h?: number;
     alt: string;
     className?: string;
+    tr?: boolean;
 }
 
-function Image({path, w, h, alt, className}: ImageType) {
+function Image({path, w, h, alt, className, tr}: ImageType) {
   return (
-    <IKImage urlEndpoint={urlEndpoint} path={path} width={w} height={h} alt={alt} className={className}/>
+    <IKImage 
+        urlEndpoint={urlEndpoint} 
+        path={path}
+        alt={alt} 
+        className={className}
+        {...(tr 
+            ? {transformation: [{width: `${w}`, height: `${h}`}]} 
+            : {width: w, height: h})
+        }
+    />
   )
 }
 
