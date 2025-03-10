@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from './Image'
+import PostInfo from './PostInfo'
 
 function Post() {
   return (
@@ -19,6 +20,7 @@ function Post() {
             <div className="">
                 {/* Top  */}
                 <div className=""></div>
+                <PostInfo/>
             </div>
         </div>
     </div>
