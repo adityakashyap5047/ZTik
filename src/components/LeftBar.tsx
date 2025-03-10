@@ -94,7 +94,7 @@ function LeftBar() {
         {/* User */}
         <div className="flex items-center gap-2">
           <div className="w-10 h-10 relative rounded-full overflow-hidden">
-            <Image path="/ztik/general/avatar.png" alt="user image" w={100} h={100}/>
+            <Image path="/ztik/general/avatar.png" alt="user image" w={100} h={100} tr={true}/>
           </div>
           <div className="hidden xxl:flex flex-col">
             <span className="font-bold">aditya kumar</span>
