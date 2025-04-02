@@ -24,8 +24,10 @@ function Share() {
         <input type="text" placeholder='What is happening' className='bg-transparent outline-none placeholder:text-textGray text-xl'/>
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <div className="flex gap-4 flex-wrap">
-            <input type="file" onChange={handleMediaChange} />
-            <Image path='ztik/icons/image.svg' alt='' w={20} h={20} className='cursor-pointer'/>
+            <input type="file" onChange={handleMediaChange} className='hidden' id='file'/>
+            <label htmlFor="file">
+              <Image path='ztik/icons/image.svg' alt='' w={20} h={20} className='cursor-pointer'/>
+            </label>
             <Image path='ztik/icons/gif.svg' alt='' w={20} h={20} className='cursor-pointer'/>
             <Image path='ztik/icons/poll.svg' alt='' w={20} h={20} className='cursor-pointer'/>
             <Image path='ztik/icons/emoji.svg' alt='' w={20} h={20} className='cursor-pointer'/>
