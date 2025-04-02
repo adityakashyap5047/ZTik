@@ -1,8 +1,9 @@
+import Image from 'next/image';
 import React from 'react'
 
-function ImageEditor({onClose, previewUrl, settings, setSettings}:{
+function ImageEditor({onClose, previewURL, settings, setSettings}:{
     onClose:()=>void,
-    previewUrl: string, 
+    previewURL: string, 
     settings: {
         type: "original" | "wide" | "square",
         sensitive: boolean
@@ -15,7 +16,27 @@ function ImageEditor({onClose, previewUrl, settings, setSettings}:{
   return (
     <div className='fixed w-screen h-screen left-0 top-0 bg-black bg-opacity-75 z-10 flex items-center justify-center'>
         <div className="bg-black rounded-xl p-12 flex flex-col gap-4">
-            Test
+            {/* Top  */}
+            <div className=""></div>
+            {/* Image Container  */}
+            <div className="w-[600px] h-[600px] flex items-center">
+                <Image 
+                    src={previewURL} 
+                    alt='Edit image'
+                    height={600} 
+                    width={600} 
+                    className={
+                        `w-full ${
+                            settings.type === "original" 
+                            ? "h-full object-contain"
+                            : settings.type === "square"
+                            ? "aspect-square object-cover"
+                            : "aspect-video object-cover"
+                        }`
+                    }/>
+            </div>
+            {/* Setting  */}
+            <div className=""></div>
         </div>
     </div>
   )

@@ -41,7 +41,7 @@ function Share() {
             <div className='absolute top-2 left-2 bg-black bg-opacity-50 text-white py-1 px-4 rounded-full font-black text-sm cursor-pointer' onClick={()=>setIsEditorOpen(true)}>Edit</div>
           </div>
         }
-        {isEditorOpen && previewURL && <ImageEditor onClose={() => setIsEditorOpen(false)} previewUrl={previewURL} settings={settings} setSettings={setSettings}/>}
+        {isEditorOpen && previewURL && <ImageEditor onClose={() => setIsEditorOpen(false)} previewURL={previewURL} settings={settings} setSettings={setSettings}/>}
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <div className="flex gap-4 flex-wrap">
             <input type="file" name='file' onChange={handleMediaChange} className='hidden' id='file'/>
