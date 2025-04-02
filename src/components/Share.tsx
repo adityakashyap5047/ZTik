@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import Image from './Image'
+import NextImage from "next/image";
 import { shareAction } from '@/actions';
 
 function Share() {
@@ -14,6 +15,8 @@ function Share() {
     }
   }
 
+  const previewURL = media ? URL.createObjectURL(media) : null;
+
   return (
     <form className="p-4 flex gap-4" action={shareAction}>
       {/* Avatar */}
@@ -23,6 +26,11 @@ function Share() {
       {/* Others  */}
       <div className="flex flex-1 flex-col gap-4">
         <input type="text" name='desc' placeholder='What is happening' className='bg-transparent outline-none placeholder:text-textGray text-xl'/>
+        {
+          previewURL && <div className='relative rounded-xl overflow-hidden'>
+            <NextImage src={previewURL}alt='Preview Image' width={600} height={600}/>
+          </div>
+        }
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <div className="flex gap-4 flex-wrap">
             <input type="file" name='file' onChange={handleMediaChange} className='hidden' id='file'/>
