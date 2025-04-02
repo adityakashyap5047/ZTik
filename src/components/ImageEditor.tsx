@@ -18,12 +18,16 @@ function ImageEditor({onClose, previewURL, settings, setSettings}:{
         <div className="bg-black rounded-xl p-12 flex flex-col gap-4">
             {/* Top  */}
             <div className="flex items-center justify-between">
-                <svg width={32} viewBox='0 0 24 24' onClick={onClose} className='cursor-pointer'>
-                    <path
-                        fill='#e7e9ea'
-                        d='M7.414 13l5.043 5.04-1.414 1.42L3.586 12l7.457-7.46 1.414 1.42L7.414 11H21v2H7.414z'
-                    />
-                </svg>
+                <div className="flex items-center gap-8">
+                    <svg width={32} viewBox='0 0 24 24' onClick={onClose} className='cursor-pointer'>
+                        <path
+                            fill='#e7e9ea'
+                            d='M7.414 13l5.043 5.04-1.414 1.42L3.586 12l7.457-7.46 1.414 1.42L7.414 11H21v2H7.414z'
+                        />
+                    </svg>
+                    <h1 className='font-bold text-xl'>Media Settings</h1>
+                </div>
+                <button className='py-2 px-4 rounded-full bg-white text-black font-bold'>Save</button>
             </div>
             {/* Image Container  */}
             <div className="w-[600px] h-[600px] flex items-center">
