@@ -29,6 +29,7 @@ function Share() {
         {
           previewURL && <div className='relative rounded-xl overflow-hidden'>
             <NextImage src={previewURL}alt='Preview Image' width={600} height={600}/>
+            <div className='absolute top-2 left-2 bg-black bg-opacity-50 text-white py-1 px-4 rounded-full font-black text-sm cursor-pointer'>Edit</div>
           </div>
         }
         <div className="flex items-center justify-between gap-4 flex-wrap">
