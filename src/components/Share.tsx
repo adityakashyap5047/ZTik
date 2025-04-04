@@ -37,7 +37,21 @@ function Share() {
         <input type="text" name='desc' placeholder='What is happening' className='bg-transparent outline-none placeholder:text-textGray text-xl'/>
         {
           previewURL && <div className='relative rounded-xl overflow-hidden'>
-            <NextImage src={previewURL}alt='Preview Image' width={600} height={600}/>
+            <NextImage 
+              src={previewURL}
+              alt='Preview Image' 
+              width={600} 
+              height={600}
+              className={
+                `w-full ${
+                    settings.type === "original" 
+                    ? "h-full object-contain"
+                    : settings.type === "square"
+                    ? "aspect-square object-cover"
+                    : "aspect-video object-cover"
+                }`
+              }
+            />
             <div className='absolute top-2 left-2 bg-black bg-opacity-50 text-white py-1 px-4 rounded-full font-black text-sm cursor-pointer' onClick={()=>setIsEditorOpen(true)}>Edit</div>
           </div>
         }
