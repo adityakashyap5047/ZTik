@@ -27,7 +27,7 @@ function Share() {
   const previewURL = media ? URL.createObjectURL(media) : null;
 
   return (
-    <form className="p-4 flex gap-4" action={shareAction}>
+    <form className="p-4 flex gap-4" action={formDAta=>shareAction(formDAta, settings)}>
       {/* Avatar */}
       <div className="relative w-10 h-10 rounded-full overflow-hidden">
         <Image path='ztik/general/avatar.png' alt='Avatar' w={100} h={100} tr={true}/>
