@@ -13,6 +13,12 @@ function ImageEditor({onClose, previewURL, settings, setSettings}:{
         sensitive: boolean;
     }>>
 }) {
+
+    const handleChangeSensitive = (sensitive: boolean) => {
+        setSettings((prev) => ({...prev, sensitive}));
+    }
+
+
   return (
     <div className='fixed w-screen h-screen left-0 top-0 bg-black bg-opacity-75 z-10 flex items-center justify-center'>
         <div className="bg-black rounded-xl p-12 flex flex-col gap-4">
@@ -47,7 +53,22 @@ function ImageEditor({onClose, previewURL, settings, setSettings}:{
                     }/>
             </div>
             {/* Setting  */}
-            <div className=""></div>
+            <div className="flex items-center justify-between text-sm">
+                <div className="flex items-center gap-8"></div>
+                <div 
+                    className={`
+                        cursor-pointer 
+                        py-1 
+                        px-4 
+                        rounded-full 
+                        text-black 
+                        ${settings.sensitive ? "bg-red-500" : "bg-white"}
+                    `}
+                    onClick={() => handleChangeSensitive(!settings.sensitive)}
+                >
+                    sensitive
+                </div>
+            </div>
         </div>
     </div>
   )
